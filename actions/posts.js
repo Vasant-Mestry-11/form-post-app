@@ -46,7 +46,7 @@ export async function createPost(prevState, formData) {
   } catch (error) {
     throw new Error("Failed to create new post");
   }
-
+  revalidatePath('/', 'layout')
   redirect("/feed");
 }
 
